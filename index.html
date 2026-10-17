@@ -8,10 +8,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 
-<section class="hero">
+<div class="progress" id="progress"></div>
+
+<div class="topbar" id="topbar">
   <header class="nav container">
     <a href="#" class="logo"><span class="logo-icon">◎</span>SchoolBuddy</a>
     <nav class="nav-links">
@@ -22,11 +25,13 @@
     </nav>
     <a href="#" class="btn btn-light btn-sm">Vyzkoušet demo →</a>
   </header>
+</div>
 
+<section class="hero">
   <div class="container hero-grid">
     <div>
       <p class="eyebrow"><span class="dot"></span>Peer mentoring pro střední školy · SŠINFIS Plzeň</p>
-      <h1>Najdi<br>svého<br>buddyho</h1>
+      <h1>Najdi<br>svého<br><span>buddyho</span></h1>
       <p class="lead">Webová aplikace, která propojí nováčky a mladší studenty se staršími spolužáky. Doučování, rychlá SOS pomoc, rozvrh i úkoly na jednom místě — a za každou pomoc se sbírají Buddy Coins.</p>
       <div class="btn-row">
         <a href="#" class="btn btn-light">Vyzkoušet demo →</a>
@@ -68,6 +73,13 @@
   <div class="wave"></div>
 </section>
 
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>SOS pomoc</span><span>Buddy Coins</span><span>PIN a QR schůzky</span><span>Rozvrh a úkoly</span><span>Bezpečná místa</span><span>CZ · EN · UA</span><span>GDPR</span>
+    <span>SOS pomoc</span><span>Buddy Coins</span><span>PIN a QR schůzky</span><span>Rozvrh a úkoly</span><span>Bezpečná místa</span><span>CZ · EN · UA</span><span>GDPR</span>
+  </div>
+</div>
+
 <section class="section container" id="jak">
   <div class="head-row">
     <div>
@@ -93,7 +105,7 @@
     <article class="card card-red"><span class="icon icon-red">⛑</span><h4>SOS – rychlá pomoc</h4><p>Zadej předmět, téma a typ: otázka, test nebo úkol. Upozornění dostanou nejdřív mentoři, kteří daný předmět učí. Po přijetí se hned otevře chat.</p></article>
     <article class="card"><span class="icon">🔍</span><h4>Hledání mentora podle shody</h4><p>Výsledky se řadí podle procenta shody v zájmech, předmětech a formě pomoci (ve škole nebo online). Vidíš i to, kdo je právě dostupný.</p></article>
     <article class="card card-dark"><span class="icon icon-white">▦</span><h4>Schůzky potvrzené PIN nebo QR</h4><p>Na schůzce student vygeneruje šestimístný PIN nebo QR kód platný 10 minut. Mentor ho naskenuje a oba dostanou body.</p>
-      <div class="pin"><span>4</span><span>8</span><span>2</span><span>9</span><span>1</span><span>3</span></div></article>
+      <div class="pin"><span style="--k:0">4</span><span style="--k:1">8</span><span style="--k:2">2</span><span style="--k:3">9</span><span style="--k:4">1</span><span style="--k:5">3</span></div></article>
     <article class="card"><span class="icon">💬</span><h4>Chaty a Seznamka spolužáků</h4><p>Soukromé i skupinové chaty se zprávami o schůzkách. Swipe karty spolužáků: když se označíte navzájem, vznikne match a otevře se chat.</p></article>
     <article class="card"><span class="icon">📅</span><h4>Rozvrh, písemky a úkoly</h4><p>Týdenní rozvrh s učebnou a učitelem, změny a suplování, přehled testů a domácí úkoly s termíny. Chytré připomínky pohlídají, aby nic neuteklo.</p></article>
     <article class="card"><span class="icon">👥</span><h4>Skupiny, akce a oznámení</h4><p>Studijní skupiny podle předmětu, akce s kapacitou, přihlášením a check-inem a oznámení školy ve třech jazycích.</p></article>
@@ -118,7 +130,7 @@
   <div>
     <div class="card wallet">
       <small class="muted">Buddy Coins</small>
-      <strong>575</strong>
+      <strong class="count" data-to="575">0</strong>
       <div class="btn-row">
         <a href="#" class="btn btn-outline btn-sm">Peněženka</a>
         <a href="#" class="btn btn-outline btn-sm">🎁 Partnerské bonusy</a>
@@ -127,10 +139,10 @@
     <div class="card card-dark levels">
       <div class="levels-head"><b>Úrovně</b><small>podle počtu lidí, kterým jsi pomohl(a) nebo je pozval(a)</small></div>
       <div class="level-grid">
-        <div><i style="background:#b08550"></i><b>Bronze</b><small>od 0</small></div>
-        <div><i style="background:#b9bcc2"></i><b>Silver</b><small>od 3</small></div>
-        <div><i style="background:#e0b83c"></i><b>Gold</b><small>od 10</small></div>
-        <div><i style="background:#fff"></i><b>Platinum</b><small>od 25</small></div>
+        <div><i style="background:#b08550;--k:0"></i><b>Bronze</b><small>od 0</small></div>
+        <div><i style="background:#b9bcc2;--k:1"></i><b>Silver</b><small>od 3</small></div>
+        <div><i style="background:#e0b83c;--k:2"></i><b>Gold</b><small>od 10</small></div>
+        <div><i style="background:#fff;--k:3"></i><b>Platinum</b><small>od 25</small></div>
       </div>
     </div>
   </div>
@@ -207,6 +219,52 @@
     <small>© 2026 SchoolBuddy</small>
   </div>
 </footer>
+
+<script>
+// 1) Postupné odkrývání prvků při scrollu
+const sel = '.section>.label,.section h2,.section>.muted,.side,.steps .card,.features .card,.coins>div,.table .row,.wallet,.levels,.roles .card,.dark-grid article,.contact>div,.partner,.school .big';
+document.querySelectorAll(sel).forEach(el => {
+  el.classList.add('reveal');
+  el.style.setProperty('--i', Array.from(el.parentNode.children).indexOf(el) % 6);
+});
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    el.classList.add('in');
+    io.unobserve(el);
+    setTimeout(() => el.style.transitionDelay = '0s', 1500);
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// 2) Počítadlo Buddy Coins
+const countIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, to = +el.dataset.to, t0 = performance.now(), dur = 1600;
+    const tick = t => {
+      const p = Math.min((t - t0) / dur, 1);
+      el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+    countIO.unobserve(el);
+  });
+}, { threshold: 0.6 });
+document.querySelectorAll('.count').forEach(el => countIO.observe(el));
+
+// 3) Lišta postupu + průhledné / rozmazané menu
+const bar = document.getElementById('progress');
+const top = document.getElementById('topbar');
+function onScroll() {
+  const h = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = 'scaleX(' + (h > 0 ? scrollY / h : 0) + ')';
+  top.classList.toggle('scrolled', scrollY > 30);
+}
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+</script>
 
 </body>
 </html>
